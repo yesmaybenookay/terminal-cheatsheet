@@ -147,9 +147,8 @@ dict -d moby-thesaurus [word]        # Shows Moby Thesaurus entries
 
 ### livecd-iso-to-disk (*Bootable drive creation only available on Fedora*)
 
-[Creating and using a live installation image](https://docs.fedoraproject.org/en-US/quick-docs/creating-and-using-a-live-installation-image/)
-[livecd-tools Documentation](https://github.com/livecd-tools/livecd-tools/blob/main/docs/livecd-iso-to-disk.pod)
-[1. Expanded livecd-iso-to-disk Cheatsheet](https://github.com/yesmaybenookay/terminal-cheatsheet#expaned-livecd-iso-to-disk-cheatsheet)
+* [Creating and using a live installation image](https://docs.fedoraproject.org/en-US/quick-docs/creating-and-using-a-live-installation-image/)
+* [livecd-tools Documentation](https://github.com/livecd-tools/livecd-tools/blob/main/docs/livecd-iso-to-disk.pod)
 
 **Template**
 
@@ -164,6 +163,8 @@ sudo livecd-iso-to-disk --format --reset-mbr --home-size-mb HOMESIZEMB --overlay
 ```sh
 sudo livecd-iso-to-disk --format --reset-mbr Fedora-Security-Live-x86_64-34-1.2.iso /dev/sdX
 ```
+
+* [1. Expanded livecd-iso-to-disk Cheatsheet](https://github.com/yesmaybenookay/terminal-cheatsheet#1-expanded-livecd-iso-to-disk-cheatsheet)
 
 ### mariadb: *MySQL Alternative*
 
@@ -275,7 +276,7 @@ figlet # figlet [your text here] - Bannerizes inputted text
 fortune # Spits out a random "fortune"
 ```
 
-[2. Phosphor XScreenSaver Settings for fortune](https://github.com/yesmaybenookay/terminal-cheatsheet#phosphor-xscreensaver-settings-for-fortune)
+[2. Phosphor XScreenSaver Settings for fortune](https://github.com/yesmaybenookay/terminal-cheatsheet#2-phosphor-xscreensaver-settings-for-fortune)
 
 ```sh
 oneko # A cat [or a few other bitmaps] which follows your mouse
