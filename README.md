@@ -1,17 +1,19 @@
-# Linux Terminal Command Cheatsheet | **[Created by yesmaybenookay](https://github.com/yesmaybenookay)**
+# Linux Terminal Command Cheatsheet
+
+**[Created by yesmaybenookay](https://github.com/yesmaybenookay)**
 
 ---
 
 ## Table of Contents:
 
-1. [Description]()
-2. [Formatting Legend]()
-3. [Antivirus / Security]()
-4. [Tools / Useful Commands]()
-5. [One Word Tools / Useful Commands]()
-6. [Fun Terminal Commands]()
-7. [One Word and Short Commands]()
-8. [Footnotes]()
+1. [Description](https://github.com/yesmaybenookay/terminal-cheatsheet#description)
+2. [Formatting Legend](https://github.com/yesmaybenookay/terminal-cheatsheet#formatting-legend)
+3. [Antivirus / Security](https://github.com/yesmaybenookay/terminal-cheatsheet#antivirus--security)
+4. [Tools / Useful Commands](https://github.com/yesmaybenookay/terminal-cheatsheet#tools--useful-commands)
+5. [One Word Tools / Useful Commands](https://github.com/yesmaybenookay/terminal-cheatsheet#one-word-tools--useful-commands)
+6. [Fun Terminal Commands](https://github.com/yesmaybenookay/terminal-cheatsheet#fun-terminal-commands)
+7. [One Word and Short Commands](https://github.com/yesmaybenookay/terminal-cheatsheet#one-word-and-short-commands)
+8. [Footnotes](https://github.com/yesmaybenookay/terminal-cheatsheet#footnotes)
 
 ---
 
@@ -25,20 +27,20 @@ The Linux Terminal Command Cheatsheet is my collection of cheatsheets I've made 
 
 ### Program Name: (*Short Explanation*)
 
-[Helpful Link](https://github.com)
+[Helpful Link](https://https://github.com/yesmaybenookay/terminal-cheatsheet#)
 
 * Notes / Useful Information `PATH/TO/CONFIG_FILE/FOR/EXAMPLE/.config`
 
 **Command Template**
 
 ```sh
-sample_command --sample_option # For some programs, I've created a template for ease of use
+sample_command --sample_option # Copy and paste the template
 ```
 
 **Commands / Edited Template Variations**
 
 ```sh
-sample_command --sample_option --sample_option_2 # Commands, each line being a new command (some are in succession to the command above).
+sample_command --sample_option --sample_option_2 # Pre-filled template
 ```
 
 ---
@@ -100,7 +102,7 @@ while true; do echo -ne "`date`\r"; done
 ### dd: (*Creates a bootable drive*)
 
 ```sh
-$ dd if=/home/user/Downloads/ubuntu.iso of=/dev/sdb1 bs=512M; sync
+dd if=/home/user/Downloads/ubuntu.iso of=/dev/sdb1 bs=512M; sync
 ```
 
 ### dict: (*Dictionary / thesaurus*)
@@ -109,13 +111,37 @@ $ dd if=/home/user/Downloads/ubuntu.iso of=/dev/sdb1 bs=512M; sync
 
 ```sh
 sudo dnf install dictd -y            # Installs dictd
+```
+
+```sh
 sudo dnf install gnome-dictionary -y # Installs local databases for offline use
+```
+
+```sh
 dict [word]                          # Searches the Internet for definitions and thesaurus entries
+```
+
+```sh
 dict -d [dictionary] [word]          # Uses local dictionary database
+```
+
+```sh
 dict -D                              # Lists all available local dictionaries
+```
+
+```sh
 dict -i [dictionary]                 # Shows information about a dictionary
+```
+
+```sh
 dict -d [fd-eng-2ND_LANG] [word]     # Shows translations
+```
+
+```sh
 dict -d trans [word]                 # Shows translations in every available dictionary
+```
+
+```sh
 dict -d moby-thesaurus [word]        # Shows Moby Thesaurus entries
 ```
 
@@ -123,7 +149,7 @@ dict -d moby-thesaurus [word]        # Shows Moby Thesaurus entries
 
 [Creating and using a live installation image](https://docs.fedoraproject.org/en-US/quick-docs/creating-and-using-a-live-installation-image/)
 [livecd-tools Documentation](https://github.com/livecd-tools/livecd-tools/blob/main/docs/livecd-iso-to-disk.pod)
-[^1: Expanded livecd-iso-to-disk Cheatsheet]
+[1. Expanded livecd-iso-to-disk Cheatsheet](https://github.com/yesmaybenookay/terminal-cheatsheet#expaned-livecd-iso-to-disk-cheatsheet)
 
 **Template**
 
@@ -203,6 +229,22 @@ espeak -a 200 -g 11 -p 99 -s 110 -v en-us ""
  * zh
  * zh-yue
 
+### [godspeaks](https://github.com/rethyxyz/godspeaks) *rethyxyz's Python port of Terry A. Davis's (R.I.P.) God Speaks a.k.a. God Says program.*
+
+```sh
+python godspeaks.py
+```
+
+```sh
+python GodSpeaks.py
+```
+
+**Works great with Phosphor in XScreenSaver**
+
+```sh
+phosphor -root -scale 3 -ticks 5 -delay 35000 -program "cd /PATH/TO/GodSpeaks/ && python godspeaks.py" -fg red
+```
+
 ### lolcat: *Outputs text with a rainbow effect*
 
 ```sh
@@ -215,14 +257,43 @@ lolcat [OPTION]... [FILE]...
 
 ```sh
 banner # Banner [your text here] - Bannerizes inputted text
+```
+
+```sh
 cmatrix # Creates a matrix code rain effect in your terminal
+```
+
+```sh
 cowsay # ASCII cow with a customizable message
+```
+
+```sh
 figlet # figlet [your text here] - Bannerizes inputted text
+```
+
+```sh
 fortune # Spits out a random "fortune"
+```
+
+[2. Phosphor XScreenSaver Settings for fortune](https://github.com/yesmaybenookay/terminal-cheatsheet#phosphor-xscreensaver-settings-for-fortune)
+
+```sh
 oneko # A cat [or a few other bitmaps] which follows your mouse
+```
+
+```sh
 sl # A locamotive in your terminal
+```
+
+```sh
 telnet towel.blinkenlights.nl # ASCII Star Wars: A New Hope
+```
+
+```sh
 toilet # toilet [your text here] - Bannerizes inputted text
+```
+
+```sh
 yes # "yes [your text here]" - Repeats your text until interrupt
 ```
 
@@ -230,14 +301,20 @@ yes # "yes [your text here]" - Repeats your text until interrupt
 
 ## Footnotes
 
-[^1]: Expanded livecd-iso-to-disk Cheatsheet
+### 1. Expanded livecd-iso-to-disk Cheatsheet
 
-    [*Full Documentation*](https://docs.fedoraproject.org/en-US/quick-docs/creating-and-using-a-live-installation-image/)
+[*Full Documentation*](https://docs.fedoraproject.org/en-US/quick-docs/creating-and-using-a-live-installation-image/)
 
-    **Limited Lifetime of Persistent Overlay**
+**Limited Lifetime of Persistent Overlay**
 
-    One very important note about using the "primary" persistent overlay for system changes is that due to the way it's currently implemented (as a Device-mapper copy-on-write snapshot), every single change to it (writes AND deletes) subtracts from its free space, so it will eventually be "used up" and your USB stick will no longer boot [see this dm-devel discussion](http://thread.gmane.org/gmane.linux.kernel.device-mapper.devel/14644) and [this page](https://fedoraproject.org/wiki/LiveOS_image#Overlay_recovery) (for emergency recovery). Because of these limitations, it is advisable to use the system-level persistence sparingly, for configuration changes and important security updates only. Or, if you have sufficient disk space available, changes to the LiveOS root filesystem snapshot can be merged into a new copy of the root filesystem. See [this page section](https://fedoraproject.org/wiki/LiveOS_image#Merge_overlay_into_new_image) for instructions.
+One very important note about using the "primary" persistent overlay for system changes is that due to the way it's currently implemented (as a Device-mapper copy-on-write snapshot), every single change to it (writes AND deletes) subtracts from its free space, so it will eventually be "used up" and your USB stick will no longer boot [see this dm-devel discussion](http://thread.gmane.org/gmane.linux.kernel.device-mapper.devel/14644) and [this page](https://fedoraproject.org/wiki/LiveOS_image#Overlay_recovery) (for emergency recovery). Because of these limitations, it is advisable to use the system-level persistence sparingly, for configuration changes and important security updates only. Or, if you have sufficient disk space available, changes to the LiveOS root filesystem snapshot can be merged into a new copy of the root filesystem. See [this page section](https://fedoraproject.org/wiki/LiveOS_image#Merge_overlay_into_new_image) for instructions.
 
-    See [this section](https://fedoraproject.org/wiki/User:Nicolassatragno/liveUSB#Mounting_a_Live_USB_filesystem) for mounting the root filesystem outside of a boot.
+See [this section](https://fedoraproject.org/wiki/User:Nicolassatragno/liveUSB#Mounting_a_Live_USB_filesystem) for mounting the root filesystem outside of a boot.
 
-    For normal, write-many storage (vs the write-once overlay), use the ```--home-size-mb``` option to create a home directory filesystem for personal files. The home.img can be re-used and loop mounted outside of the Live USB environment.
+For normal, write-many storage (vs the write-once overlay), use the ```--home-size-mb``` option to create a home directory filesystem for personal files. The home.img can be re-used and loop mounted outside of the Live USB environment.
+
+### 2. Phosphor XScreenSaver Settings for fortune
+
+```sh
+phosphor -root -scale 2 -ticks 5 -delay 35000 -program "fortune" -fg red
+```
