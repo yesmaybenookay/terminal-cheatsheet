@@ -276,7 +276,7 @@ figlet # figlet [your text here] - Bannerizes inputted text
 fortune # Spits out a random "fortune"
 ```
 
-[2. Phosphor XScreenSaver Settings for fortune](https://github.com/yesmaybenookay/terminal-cheatsheet#2-phosphor-xscreensaver-settings-for-fortune)
+* [2. Phosphor XScreenSaver Settings for fortune](https://github.com/yesmaybenookay/terminal-cheatsheet#2-phosphor-xscreensaver-settings-for-fortune)
 
 ```sh
 oneko # A cat [or a few other bitmaps] which follows your mouse
