@@ -1,4 +1,4 @@
-# Linux Terminal Command Cheatsheet
+# Linux Terminal Command Cheatsheet:
 
 **[Created by yesmaybenookay](https://github.com/yesmaybenookay)**
 
@@ -17,209 +17,291 @@
 
 ---
 
-## Description
+## Description:
 
-The Linux Terminal Command Cheatsheet is my collection of cheatsheets I've made for various command line tools. The contents here only cover a small portion of what some of these tools can do so be sure to explore more with ```[command] --help``` or ```man [command]```. Additionally, I've tried to include at least one URL linking to additional info / help for each tool. 
+The Linux Terminal Command Cheatsheet is my collection of cheatsheets I've made for various command line tools I use on Fedora Linux. The contents here only cover a small portion of what some of these tools can do so be sure to explore more with ```[command] --help``` or ```man [command]```. Additionally, I've tried to include at least one URL linking to additional info / help for each tool.
 
 ---
 
 ## Formatting Legend:
 
-### Program Name: (*Short Explanation*)
+### Program Name:
 
-[Helpful Link](https://https://github.com/yesmaybenookay/terminal-cheatsheet#)
+(*Short Explanation*)
+
+[Helpful Link]()
 
 * Notes / Useful Information `PATH/TO/CONFIG_FILE/FOR/EXAMPLE/.config`
 
-**Command Template**
+Template for Copying and Pasting:
 
 ```sh
-sample_command --sample_option # Copy and paste the template
+sample_command --sample_option
 ```
 
-**Commands / Edited Template Variations**
+Prefilled Template Variations:
 
 ```sh
-sample_command --sample_option --sample_option_2 # Pre-filled template
+sample_command --sample_option --sample_option_2
 ```
 
 ---
 
 ## Antivirus / Security:
 
-### ClamAV: (*Antivirus*)
+### ClamAV:
+
+(*Antivirus*)
 
 [How to Install and use ClamAV](https://linuxhint.com/install_clamav_ubuntu/)
 
+Update ClamAV's Database (*"-v" is for verbose*):
+
 ```sh
-sudo freshclam -v          # Updates ClamAV's Database
-sudo clamscan -r -i /      # Begins scan and only prints infected files
+sudo freshclam -v
 ```
 
-### Maldet: (*Malware detection and removal*)
+Begin scan and display infected files (*"-r" is for recursive, "-i" is for displaying infected files only*):
+
+```sh
+sudo clamscan -r -i /DIRECTORY_TO_SCAN
+```
+
+### Maldet:
+
+(*Malware detection and removal*)
 
 [Maldet Commands](https://blog.first2host.co.uk/maldet-commands/)
 
+Update malware detection signatures:
+
 ```sh
-sudo maldet -u                       # Updates malware detection signatures
-sudo maldet -d                       # Updates Maldet
-sudo maldet -a /path/to/folder/file  # Scans path to folder / file
+sudo maldet -u
 ```
 
-### Rootkit Hunter: (*Identifies rootkits and potential threats*)
+Update Maldet:
+
+```sh
+sudo maldet -d
+```
+
+Scan path to folder / file:
+
+```sh
+sudo maldet -a /PATH/TO/FOLDER/FILE
+```
+
+### Rootkit Hunter:
+
+(*Identify rootkits and potential threats*)
 
 [How to Use Rootkit Hunter](https://blackhattutorial.com/how-to-use-rkhunter-to-guard-against-rootkits/)
 
+Fill Rootkit Hunter's database properties:
+
 ```sh
-sudo rkhunter --update     # This and the second command fill Rootkit Hunter's database properties
+sudo rkhunter --update
+```
+
+```sh
 sudo rkhunter --propupd
-sudo rkhunter --check      # Starts scanning the entire file system
+```
+
+Start scanning the entire file system:
+
+```sh
+sudo rkhunter --check
 ```
 
 ---
 
 ## Tools / Useful Commands:
 
-### browsh: (*Text-based web browser capable of displaying graphics*)
+### [browsh](https://github.com/browsh-org/browsh):
 
-[browsh](https://www.brow.sh/)
+(*Text-based web browser capable of displaying graphics*)
+
+[Browsh Website](https://www.brow.sh/)
 
 * Config file Location: `$HOME/.config/browsh/config.toml`
 
 ```sh
-curl -o browsh.rpm -L https://github.com/browsh-org/browsh/releases/download/v1.6.4/browsh_1.6.4_linux_amd64.rpm
-sudo rpm -Uvh ./browsh.rpm
-rm ./browsh.rpm
 browsh
 ```
 
-### Date and Time *Display live date and time*
+### Date and Time:
+
+(*Display live date and time*)
 
 ```sh
 while true; do echo -ne "`date`\r"; done
 ```
 
-### dd: (*Creates a bootable drive*)
+### dict:
 
-```sh
-dd if=/home/user/Downloads/ubuntu.iso of=/dev/sdb1 bs=512M; sync
-```
-
-### dict: (*Dictionary / thesaurus*)
+(*Dictionary / thesaurus*)
 
 [Dictd – Using a Linux Command Line Dictionary](https://www.putorius.net/linux-command-line-dictionary.html#list-available-databases)
 
-```sh
-sudo dnf install dictd -y            # Installs dictd
-```
+* In all dict commands below, replace "WORD" with a word of your choosing  and "DICTIONARY" with the dictionary you want to use (*list installed dictionaries with* ```dict -D```):
+
+Install dictd:
 
 ```sh
-sudo dnf install gnome-dictionary -y # Installs local databases for offline use
+sudo dnf install dictd -y
 ```
+
+Install local databases for offline use:
 
 ```sh
-dict [word]                          # Searches the Internet for definitions and thesaurus entries
+sudo dnf install gnome-dictionary -y
 ```
+
+Search the Internet for definitions and thesaurus entries:
 
 ```sh
-dict -d [dictionary] [word]          # Uses local dictionary database
+dict WORD
 ```
+
+Use local dictionary database:
 
 ```sh
-dict -D                              # Lists all available local dictionaries
+dict -d DICTIONARY WORD
 ```
+
+List all available local dictionaries:
+
+* There are bilingual dictionaries for translating as well as other interesting ones such as ```moby-thesaurus``` ([Moby Thesaurus](https://moby-thesaurus.org/)) and ```devil``` ([The Devil's Dictionary](https://en.wikipedia.org/wiki/The_Devil%27s_Dictionary)).
 
 ```sh
-dict -i [dictionary]                 # Shows information about a dictionary
+dict -D
 ```
+
+Show information about a dictionary:
 
 ```sh
-dict -d [fd-eng-2ND_LANG] [word]     # Shows translations
+dict -i DICTIONARY
 ```
+
+Show translations in every available bilingual dictionary:
 
 ```sh
-dict -d trans [word]                 # Shows translations in every available dictionary
+dict -d trans WORD
 ```
+
+Show translations in every available dictionary:
 
 ```sh
-dict -d moby-thesaurus [word]        # Shows Moby Thesaurus entries
+dict -d all WORD
 ```
 
-### livecd-iso-to-disk (*Bootable drive creation only available on Fedora*)
+Show [Moby Thesaurus](https://moby-thesaurus.org/) entries:
+
+```sh
+dict -d moby-thesaurus WORD
+```
+
+### livecd-iso-to-disk:
+
+(*Bootable drive creation only available on Fedora*)
 
 * [Creating and using a live installation image](https://docs.fedoraproject.org/en-US/quick-docs/creating-and-using-a-live-installation-image/)
 * [livecd-tools Documentation](https://github.com/livecd-tools/livecd-tools/blob/main/docs/livecd-iso-to-disk.pod)
-
-**Template**
-
-```sh
-sudo livecd-iso-to-disk --format --reset-mbr --home-size-mb HOMESIZEMB --overlay-size-mb OVERLAYSIZEMB DISKIMAGE.iso /dev/DISKLABEL
-```
-
-**Create a bootable USB stick in the directory the ISO is located:**
-
-*replace "X" in "sdX" with the target drive, ex. "sdc"*
+* *I'm confused about using* ```--home-size-mb``` *and* ```--overlay-size-mb``` *so please reach out if you can help. (See [1. Notes on Persistence](https://github.com/yesmaybenookay/terminal-cheatsheet#1-notes-on-persistence))* 
+* Replace "DISKIMAGE" with the name of the ISO you want to use
+* Replace "DISKLABEL" with the label of the disk you want to use (*use* ```df``` *or* ```lsblk``` *to find the correct disk label*)
 
 ```sh
-sudo livecd-iso-to-disk --format --reset-mbr Fedora-Security-Live-x86_64-34-1.2.iso /dev/sdX
+sudo livecd-iso-to-disk --format --reset-mbr DISKIMAGE.iso /dev/DISKLABEL
 ```
 
-* [1. Expanded livecd-iso-to-disk Cheatsheet](https://github.com/yesmaybenookay/terminal-cheatsheet#1-expanded-livecd-iso-to-disk-cheatsheet)
+### mariadb:
 
-### mariadb: *MySQL Alternative*
+(*MySQL Alternative*)
+
+Start MariaDB:
 
 ```sh
 sudo systemctl start mariadb
+```
+
+Stop MariaDB:
+
+```sh
 sudo systemctl stop mariadb
 ```
 
-### [speedread](https://github.com/pasky/speedread) *Learn to speedread*
+### [speedread](https://github.com/pasky/speedread):
 
-*Displays a body of text one word at a time to train speedreading ability. To help you get used to speedreading, the default setting is 250 words per minute.*
+(*Learn to speedread*)
+
+* Start at the default words per minute ("-w 250") (*250 wpm is a good speed for absolute beginners.*)
+* Press "[" to slow down by 10%
+* Press "]" to speed up by 10%
+* Press "space" to pause and show the last two lines of context
 
 ```sh
-cat tea.txt | ./speedread -w 250
+cat FILENAME.txt | ./speedread -w 250
 ```
-
-* *[ - slow down by 10%*
-* *] - speed up by 10%*
-* *space - pause (and show the last two lines of context)*
 
 ---
 
 ## One Word Tools / Useful Commands: 
 
-```sh
-cal # Calendar
-```
+### cal:
+
+(*Calendar for the current month*)
 
 ```sh
-factor # "factor [number]"
+cal
 ```
 
-```sh
-pi # "pi [number]"
-```
-```sh
-w # Shows information about current users such as name and login time
-```
+### factor:
+
+(*Display factors of a number*)
+
+* Replace "NUMBER" with a number
 
 ```sh
-wikit # Search Wikipedia
+factor NUMBER
+```
+
+### w:
+
+(*Display information about current users such as name and login time*)
+
+```sh
+w
 ```
 
 ---
 
 ## Fun Terminal Commands:
 
-### espeak: *Text to speech*
+### espeak:
+
+(*Text to speech*)
+
+Speak YOURTEXT:
 
 ```sh
-espeak -a 200 -g 11 -p 99 "TYPE YOUR TEXT HERE" -s 110 -v en-us
-espeak -a 200 -g 11 -p 99 -s 110 -v en-us ""
+espeak "YOURTEXT"
 ```
 
-*Decent Voices*
+My template (*"-a" is for amplitude, -g is for word gap, "-p" is for pitch, -s is speed in word per minute, and -v is for voice*):
+
+```sh
+espeak -a 200 -g 11 -p 99 "YOURTEXT" -s 110 -v en-us
+```
+
+Use [```godspeaks```](https://github.com/yesmaybenookay/terminal-cheatsheet#godspeaks) to generate text to speak:
+
+```sh
+python godspeaks.py | espeak -a 200 -g 11 -p 99 -s 110 -v en-us
+```
+
+*My favorite voices:*
+
  * af
  * en
  * en-us
@@ -230,81 +312,125 @@ espeak -a 200 -g 11 -p 99 -s 110 -v en-us ""
  * zh
  * zh-yue
 
-### [godspeaks](https://github.com/rethyxyz/godspeaks) *rethyxyz's Python port of Terry A. Davis's (R.I.P.) God Speaks a.k.a. God Says program.*
+### [godspeaks](https://github.com/rethyxyz/godspeaks):
+
+(*rethyxyz's Python port of Terry A. Davis's (R.I.P.) God Speaks a.k.a. God Says program.*)
+
+Generate 31 words / phrases:
 
 ```sh
 python godspeaks.py
 ```
 
+Interactive Mode (*Generate 3 sets of 31 words / phrases with an option to generate 3 more sets*):
+
 ```sh
 python GodSpeaks.py
 ```
 
-**Works great with Phosphor in XScreenSaver**
+Works great with Phosphor in XScreenSaver:
 
 ```sh
 phosphor -root -scale 3 -ticks 5 -delay 35000 -program "cd /PATH/TO/GodSpeaks/ && python godspeaks.py" -fg red
 ```
 
-### lolcat: *Outputs text with a rainbow effect*
+Also works great with [espeak](https://github.com/yesmaybenookay/terminal-cheatsheet#espeak):
 
 ```sh
-lolcat [OPTION]... [FILE]...
+python godspeaks.py | espeak -a 200 -g 11 -p 99 -s 110 -v en-us
 ```
 
 ---
 
 ## One Word and Short Commands:
 
-```sh
-banner # Banner [your text here] - Bannerizes inputted text
-```
+### banner
+
+(*Bannerize inputted text*)
+
+* Replace YOURTEXT with what you want to bannerize
 
 ```sh
-cmatrix # Creates a matrix code rain effect in your terminal
+banner YOURTEXT
 ```
 
-```sh
-cowsay # ASCII cow with a customizable message
-```
+### cmatrix
+
+(*Create a matrix code rain effect in your terminal*)
 
 ```sh
-figlet # figlet [your text here] - Bannerizes inputted text
+cmatrix
 ```
 
+### figlet
+
+(*Bannerize inputted text*)
+
+* Replace YOURTEXT with what you want to bannerize
+
 ```sh
-fortune # Spits out a random "fortune"
+figlet YOURTEXT
 ```
+
+### fortune
+
+(*Display a random "fortune"*)
+
+```sh
+fortune
+```
+
+Works great with Phosphor in XScreenSaver:
 
 * [2. Phosphor XScreenSaver Settings for fortune](https://github.com/yesmaybenookay/terminal-cheatsheet#2-phosphor-xscreensaver-settings-for-fortune)
 
-```sh
-oneko # A cat [or a few other bitmaps] which follows your mouse
-```
+### oneko
+
+(*A cat [or one of a few other bitmaps] which follows your mouse*)
 
 ```sh
-sl # A locamotive in your terminal
+oneko
 ```
 
-```sh
-telnet towel.blinkenlights.nl # ASCII Star Wars: A New Hope
-```
+### sl
+
+(*A locamotive in your terminal*)
 
 ```sh
-toilet # toilet [your text here] - Bannerizes inputted text
+sl
 ```
 
+### Telnet Star Wars
+
+(*The full movie, Star Wars: A New Hope, displayed with ASCII characters*)
+
 ```sh
-yes # "yes [your text here]" - Repeats your text until interrupt
+telnet towel.blinkenlights.nl
+```
+
+### toilet
+
+(*Bannerize inputted text*)
+
+* Replace YOURTEXT with what you want to bannerize
+
+```sh
+toilet YOURTEXT
+```
+
+### yes
+
+(*Repeatedly display your text until interrupted*)
+
+```sh
+yes YOURTEXT
 ```
 
 ---
 
 ## Footnotes
 
-### 1. Expanded livecd-iso-to-disk Cheatsheet
-
-[*Full Documentation*](https://docs.fedoraproject.org/en-US/quick-docs/creating-and-using-a-live-installation-image/)
+### 1. Notes on Persistence
 
 **Limited Lifetime of Persistent Overlay**
 
@@ -314,7 +440,11 @@ See [this section](https://fedoraproject.org/wiki/User:Nicolassatragno/liveUSB#M
 
 For normal, write-many storage (vs the write-once overlay), use the ```--home-size-mb``` option to create a home directory filesystem for personal files. The home.img can be re-used and loop mounted outside of the Live USB environment.
 
+[*Full Documentation*](https://docs.fedoraproject.org/en-US/quick-docs/creating-and-using-a-live-installation-image/)
+
 ### 2. Phosphor XScreenSaver Settings for fortune
+
+* Open XScreenSaver > Phosphor > Settings > Advanced > Copy and Paste the following code:
 
 ```sh
 phosphor -root -scale 2 -ticks 5 -delay 35000 -program "fortune" -fg red
